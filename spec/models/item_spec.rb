@@ -26,31 +26,62 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Content can't be blank")
       end
+      
       it 'category_idが未選択だと出品できない' do
         @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
+      it 'category_idが空だと出品できない' do
+        @item.category_id = ""
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category can't be blank")
+      end
+      
       it 'condition_idが未選択だと出品できない' do
         @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition must be other than 1")
       end
+      it 'condition_idが空だと出品できない' do
+        @item.condition_id = ""
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Condition can't be blank")
+      end
+
       it 'shipment_day_idが未選択だと出品できない' do
         @item.shipment_day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipment day must be other than 1")
       end
+      it 'shipment_day_idが空だと出品できない' do
+        @item.shipment_day_id = ""
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipment day can't be blank")
+      end
+
       it 'prefecture_idが未選択だと出品できない' do
         @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
       end
+      it 'prefecture_idが空だと出品できない' do
+        @item.prefecture_id = ""
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+      end
+
       it 'delivery_area_idが未選択だと出品できない' do
         @item.delivery_area_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery area must be other than 1")
       end
+      it 'delivery_area_idが空だと出品できない' do
+        @item.delivery_area_id = ""
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery area can't be blank")
+      end
+
       it 'item_priceが空だと出品できない' do
         @item.item_price = ""
         @item.valid?

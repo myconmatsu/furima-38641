@@ -3,9 +3,9 @@ class Item < ApplicationRecord
 
   belongs_to :user
   belongs_to :condition
-  belongs_to :deliveryarea
+  belongs_to :delivery_area
   belongs_to :category
-  belongs_to :shipmentday
+  belongs_to :shipment_day
   belongs_to :prefecture
 
   # has_one : order

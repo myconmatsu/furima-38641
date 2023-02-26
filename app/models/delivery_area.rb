@@ -1,5 +1,5 @@
 
-class Deliveryarea < ActiveHash::Base
+class DeliveryArea < ActiveHash::Base
 
   self.data = [
     {id: 1, name: '---'},

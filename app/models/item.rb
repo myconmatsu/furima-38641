@@ -11,9 +11,10 @@ class Item < ApplicationRecord
   # has_one : order
   has_one_attached :image
   
-  def was_attached?
-    self.image.attached?
-  end
+  # 今回は記述不要
+  # def was_attached?
+  #   self.image.attached?
+  # end
 
 
   with_options  presence: true do

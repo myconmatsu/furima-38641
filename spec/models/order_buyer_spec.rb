@@ -26,7 +26,7 @@ RSpec.describe OrderBuyer, type: :model do
         expect(@order_buyer.errors.full_messages).to include("Post code can't be blank")
       end
       it '郵便番号は『３桁ハイフン４桁』半角英数字でないと保存できないこと' do
-        @order_buyer.post_code = '123-123４'
+        @order_buyer.post_code = '123123４'
         @order_buyer.valid?
         expect(@order_buyer.errors.full_messages).to include("Post code is invalid. Include hyphen(-)")
       end

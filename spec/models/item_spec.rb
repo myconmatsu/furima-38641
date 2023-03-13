@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
-
   end
+  
   describe '商品情報入力' do
     context '商品情報入力ができる場合' do
         it '全ての値が正しく入力されていれば出品きる' do

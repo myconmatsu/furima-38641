@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
 
 
   def index
-    item_set
     @order_buyer = OrderBuyer.new
     if current_user.id == @item.user_id || @item.order != nil
       redirect_to root_path
@@ -14,7 +13,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    item_set
     @order_buyer = OrderBuyer.new(order_params)
     if @order_buyer.valid?
       pay_item

@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to :shipment_day
   belongs_to :prefecture
 
-  # has_one : order
+  has_one :order
   has_one_attached :image
   
   # 今回は記述不要

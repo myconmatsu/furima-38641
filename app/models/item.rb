@@ -25,8 +25,7 @@ class Item < ApplicationRecord
     validates        :prefecture_id, numericality: { other_than: 1 }
     validates        :delivery_area_id, numericality: { other_than: 1 }
     validates        :shipment_day_id, numericality: { other_than: 1 }
-    validates        :item_price,numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 } 
-    validates        :item_price,numericality: { only_integer: true }
+    validates        :item_price,numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999  , only_integer: true }
     validates        :image
   end
 
